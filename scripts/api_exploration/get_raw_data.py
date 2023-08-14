@@ -28,6 +28,20 @@ ticker_r = requests.get(ticker_url)
 ticker_data = ticker_r.json()
 symbols = [stock['symbol'] for stock in ticker_data]
 
+
+
+ticker_url = "https://financialmodelingprep.com/api/v4/institutional-ownership/portfolio-holdings-summary?cik=0001067983&apikey=" + FINANCIAL_MODELLING_PREP_API_KEY
+ticker_r = requests.get(ticker_url)
+ticker_data = ticker_r.json()
+symbols = [stock['symbol'] for stock in ticker_data]
+
+
+
+
+
+
+'''
+
 for symbol in symbols:
     
     #get vwap, volume, gain per stock
@@ -53,5 +67,4 @@ for symbol in symbols:
             ma_data = ma_data_full[:NUM_DAYS]
             print(ma_data)
             print("\n\n")
-
-
+'''
